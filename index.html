@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guess the Number</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Guess the Number</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guess" />
+    <button onclick="checkGuess()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+      // Generate a random number between 1 and 100
+      const secretNumber = Math.floor(Math.random() * 100) + 1;
+      let guessCount = 0;
+
+      function checkGuess() {
+        const guessInput = document.getElementById("guess");
+        const guess = parseInt(guessInput.value);
+        guessInput.value = "";
+
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+          setMessage("Please enter a valid number between 1 and 100.");
+          return;
+        }
+
+        guessCount++;
+
+        if (guess === secretNumber) {
+          setMessage(
+            `Congratulations! You guessed the number ${secretNumber} in ${guessCount} ${
+              guessCount === 1 ? "guess" : "guesses"
+            }!`
+          );
+          disableInput();
+        } else if (guess < secretNumber) {
+          setMessage("Too low! Try again.");
+        } else {
+          setMessage("Too high! Try again.");
+        }
+      }
+
+      function setMessage(message) {
+        document.getElementById("message").textContent = message;
+      }
+
+      function disableInput() {
+        document.getElementById("guess").disabled = true;
+        document.querySelector("button").disabled = true;
+      }
+    </script>
+  </body>
+</html>
