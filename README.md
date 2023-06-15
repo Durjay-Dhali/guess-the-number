@@ -23,6 +23,3 @@ The game is implemented in HTML, CSS, and JavaScript. Here's a brief overview of
 
 Feel free to modify and enhance the game according to your preferences!
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
