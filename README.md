@@ -2,6 +2,10 @@
 
 A simple text-based game where the player tries to guess a randomly generated number between 1 and 100.
 
+## Live demo
+
+You can see the live demo [here](https://elegant-semolina-454f18.netlify.app/).
+
 ## Instructions
 
 1. Open the `guess-the-number.html` file in a web browser.
